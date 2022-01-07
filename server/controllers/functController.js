@@ -12,10 +12,10 @@ const connection = mysql.createConnection({
 // View functions
 
 exports.view = (req, res) => {
-    // User the connection
+
     connection.query('SELECT `id`,`function_name` FROM `function_tb`', (err, rows) => {
         if (!err) {
-            res.render('./partials/sidebar', { rows });
+            res.render('./partials/sidebar', { functions: rows });
         } else {
             console.log(err);
         }
@@ -40,8 +40,17 @@ exports.viewfunctions = (req, res) => {
 
 // Form to create and update a function
 exports.form = (req, res) => {
-    res.render('add-function');
+
+    connection.query('SELECT * FROM `class_tb` WHERE `id` > 0', [req.params.id], (err, rows) => {
+        if (!err) {
+            res.render('add-function', { class: rows });
+        } else {
+            console.log(err);
+        }
+        //console.log('The data from function_tb table: \n', rows);
+    });
 }
+
 /*
 // Sidebar
 exports.sidebar = (req, res) => {
@@ -55,11 +64,11 @@ exports.create = (req, res) => {
 
     connection.query('INSERT INTO `function_tb` SET `parent_id` = ?, `function_name` = ?, `label` = ?, `description` = ?, `source_code` = ?, `syntax` = ?, `example` = ?', [parent_id, function_name, label, description, source_code, syntax, example], (err, rows) => {
         if (!err) {
-            res.render('add-function');
+            res.render('add-function', { rows });
         } else {
             console.log(err);
         }
-        //console.log('The data from function_tb table: \n', rows);
+        console.log('The data from function_tb table: \n', rows);
     });
 }
 
@@ -69,7 +78,7 @@ exports.edit = (req, res) => {
     connection.query('SELECT * FROM `function_tb` WHERE `id` = ?; SELECT * FROM `class_tb`', [req.params.id], (err, rows) => {
 
         if (!err) {
-            res.render('edit-function', { post: rows[0], class: rows[1] });
+            res.render('edit-function', { post: rows[0], class: rows[1], listExists: true });
         } else {
             console.log(err);
         }
@@ -102,6 +111,7 @@ exports.update = (req, res) => {
 
 // View functions detailed information
 exports.viewall = (req, res) => {
+
     connection.query('SELECT * FROM `function_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
         if (!err) {
             res.render('details', { rows });

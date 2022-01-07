@@ -7,7 +7,7 @@
 
     <div class="functions" id="functionsList">
         <ul>
-            {{#each rows}}
+            {{#each @root.functions}}
             <li><a href="/details/{{this.id}}">{{this.function_name}}</a></li>
             {{/each}}
         </ul>
