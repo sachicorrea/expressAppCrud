@@ -1,0 +1,31 @@
+<div class="function_data">
+    <div class="function-name">
+        <label for="function_name">Nombre</label>
+        <input type="text" name="function_name" class="function_name" value="{{this.function_name}}">
+    </div>
+
+    <div class="class-select">
+        <label for="parent_id">Clase</label>
+
+        <select name="parent_id" id="function_class">
+            {{#each @root.class}}
+            <option value="{{this.id}}" selected>{{this.class_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</div>
+
+<label for="label">Etiquetas</label>
+<textarea name="label" id="etiquetas" rows="4" cols="50">{{this.label}}</textarea>
+
+<label for="description">Descripción</label>
+<textarea name="description" id="descripcion" rows="4" cols="50">{{this.description}}</textarea>
+
+<label for="source_code">Código Fuente</label>
+<textarea name="source_code" id="codigo_fuente" rows="4" cols="50">{{this.source_code}} </textarea>
+
+<label for="syntaxis">Sintaxis</label>
+<textarea name="syntax" id="sintaxis" rows="4" cols="50">{{this.syntax}}</textarea>
+
+<label for="example">Ejemplos</label>
+<textarea name="example" id="ejemplos" rows="4" cols="50">{{this.example}}</textarea>

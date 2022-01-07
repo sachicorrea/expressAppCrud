@@ -1,0 +1,15 @@
+<div class="sidenav" id="sidenav">
+    <div class="sidebar-title">
+        <li><a href="/addfunction">
+                <h4>Crear Función</h4>
+            </a></li>
+    </div>
+
+    <div class="functions" id="functionsList">
+        <ul>
+            {{#each rows}}
+            <li><a href="/details/{{this.id}}">{{this.function_name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

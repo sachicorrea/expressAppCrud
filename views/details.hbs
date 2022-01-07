@@ -1,0 +1,46 @@
+<div class="container">
+    {{> sidebar}}
+
+    <div class="main">
+        <button id="backPage">&lt;</button>
+        <button id="forwardPage">&gt;</button>
+
+        {{#each rows}}
+        <div id="function_name">
+            <h3>{{this.function_name}}</h3>
+        </div>
+
+
+        <h3>Descripción</h3>
+        <p>{{this.description}}</p>
+
+        <h3>Código</h3>
+        <div class="code-wrapper">
+            <pre>
+                <code id="code">{{this.source_code}}</code>
+            </pre>
+        </div>
+
+        <h3>Sintaxis</h3>
+        <div class="code-wrapper">
+            <pre>
+                <code id="code">{{this.syntax}}</code>
+            </pre>
+        </div>
+
+        <h3>Ejemplos</h3>
+        <div class="code-wrapper">
+            <pre>
+                <code id="code">{{this.example}}</code>
+            </pre>
+        </div>
+
+        <h3>Etiquetas</h3>
+        <p>{{this.label}}</p>
+
+        <div class="updateOption">
+            <a href="/editfunction/{{this.id}}">Proponer Cambio</a>
+        </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases | Comunike</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <a href="/addclass">agregar</a>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre Clase</th>
+                    <th>Accion</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each rows}}
+                <tr>
+                    <td>{{this.class_name}}</td>
+                    <td><a href="/viewclass/{{this.id}}">Ver</a></td>
+                    <td><a href="/editclass/{{this.id}}">Editar</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

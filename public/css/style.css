@@ -1,0 +1,298 @@
+body {
+    color: #2c3437;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+header {
+    border-bottom: 1px solid black;
+    margin: 10px 20px 10px 180px;
+}
+
+/** Nav bar **/
+.nav-bar {
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    border-right: 1px solid black;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+nav ul li:nth-child(1) {
+    padding-left: 0px;
+}
+
+nav ul li a{
+    text-decoration: none;
+}
+
+nav ul li a:link {
+    color: #333;
+}
+
+nav ul li a:visited {
+    color: #333;
+}
+
+nav ul li a:hover {
+    color: #333;
+}
+
+nav ul li:active {
+    color: #333;
+}
+
+/** Vertical fixed sidebar **/
+/* Fixed sidenav, full height */
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#2c3437;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+/* Exit button in sidebar full-width */
+.sidenav .closebtn {
+    display: none;
+}
+
+.sidebar-title ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidebar-title h4 {
+    color: #84ba64;
+    margin: 0 0 10px 0;
+}
+
+.sidebar-title a {
+    text-decoration: none;
+}
+
+.sidebar-title a:link {
+    color: #84ba64;
+}
+
+.sidebar-title a:visited {
+    color: #84ba64;
+}
+
+.sidebar-title a:active {
+    color: #84ba64;
+}
+  
+.functions ul {
+    padding: 2px 0;
+}
+
+.functions li {
+    color: #b4b4b4;
+}
+
+.functions a {
+    text-decoration: none;
+    color: #f1f1f1;
+    display: block;
+    padding: 2px 0 2px 10px;
+}
+
+.functions a:hover {
+    color: #84ba64;
+}
+
+.sidenav li {
+    list-style-type: none;
+}
+
+/** Home content **/
+.main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0 20px;
+}
+
+.updateOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.updateOption a {
+    background-color: #2c3437;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/** Home content - Code blocks **/
+.code-wrapper {
+    position: relative;
+}
+  
+.code-wrapper pre {
+    background-color: #2c3437;
+    color: white;
+    /*padding: 8px 20px;*/
+    border-radius: 0 0 5px 5px;
+    margin: 0;
+    white-space: pre-line;
+}
+
+.hljs {
+    background-color: transparent;
+}
+
+/** Create and update forms **/
+
+.main_inner {
+    padding: 0 20px;
+}
+
+.function_name, .class_name {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.06);
+    width: 42%;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.06);
+    height: 150px;
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+}
+
+/** Buttons forms **/
+.btn_form {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    /* remove default behavior */
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* Usual styles */
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #2c3437;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/** Select properties **/
+#function_class {
+    padding: 15px 10px 20px 5px;
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+
+/** Flexbox for function name and class in forms **/
+.function_data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.function_data input {
+    width: 400px;
+}
+
+.button_menu {
+    display: none;
+}
+
+/** Media queries **/
+
+@media screen and (max-width: 768px) {
+
+    /* Content Home and inner pages */
+    .main_inner, .main {
+        margin-left: 0;    
+    }
+
+    /* Sidenav full-width */
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align: center;
+    }
+
+    .sidenav .closebtn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: #b4b4b4;
+    }
+
+    /* Button to display Sidenav full-width */
+    .button_menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Create and update form */
+    .function_data {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    #function_class {
+        margin-left: 20px;
+    }
+
+    /* Class name form */
+    .class_name {
+        width: fit-content;
+    }
+
+    .function_data input {
+        width: auto;
+    }
+}
