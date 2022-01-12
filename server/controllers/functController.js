@@ -6,7 +6,8 @@ const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    connectTimeout: 30000
 });
 
 // View functions
@@ -62,7 +63,7 @@ exports.sidebar = (req, res) => {
 exports.create = (req, res) => {
     const { parent_id, function_name, label, description, source_code, syntax, example } = req.body;
 
-    connection.query('INSERT INTO `function_tb` SET `parent_id` = ?, `function_name` = ?, `label` = ?, `description` = ?, `source_code` = ?, `syntax` = ?, `example` = ?', [parent_id, function_name, label, description, source_code, syntax, example], (err, rows) => {
+    connection.query('INSERT INTO `funciones_tb` SET `parent_id` = ?, `nombre` = ?, `etiquetas` = ?, `descripcion` = ?, `codigo_fuente` = ?, `sintaxis` = ?, `ejemplos` = ?', [parent_id, function_name, label, description, source_code, syntax, example], (err, rows) => {
         if (!err) {
             res.render('add-function', { rows });
         } else {
