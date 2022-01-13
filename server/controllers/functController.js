@@ -69,7 +69,7 @@ exports.create = (req, res) => {
         } else {
             console.log(err);
         }
-        console.log('The data from function_tb table: \n', rows);
+        // console.log('The data from function_tb table: \n', rows);
     });
 }
 
@@ -83,7 +83,7 @@ exports.edit = (req, res) => {
         } else {
             console.log(err);
         }
-        console.log('The data from function_tb table: \n', rows);
+        // console.log('The data from function_tb table: \n', rows);
     });
 }
 

@@ -1,4 +1,4 @@
-const { contentType } = require('express/lib/response');
+//const { contentType } = require('express/lib/response');
 const mysql = require('mysql');
 
 // Connection
