@@ -60,7 +60,7 @@ nav ul li:active {
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
-    width: 160px;
+    /*width: 160px;*/
     position: fixed;
     z-index: 1;
     top: 0;
@@ -240,7 +240,7 @@ button {
 
 /** Media queries **/
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
     /* Content Home and inner pages */
     .main_inner, .main {
