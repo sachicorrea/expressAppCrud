@@ -14,26 +14,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 });
 
-/*
-document.addEventListener("DOMContentLoaded", function (event) {
-    let x = window.matchMedia("(min-width: 768px)");
-
-    if (x.matches) {
-        document.getElementById("sidenav").style.width = "160px";
-    } else {
-        document.getElementById("sidenav").style.width = "100%";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    hljs.initHighlightingOnLoad();
 });
-*/
-
-function openNav(x) {
-    if (x.matches) {
-        document.getElementById("sidenav").style.width = "100%";
-    } else {
-        document.getElementById("sidenav").style.width = "160px";
-    }
-}
-
-var x = window.matchMedia("(max-width: 768px)");
-openNav(x);
-x.addEventListener(openNav);

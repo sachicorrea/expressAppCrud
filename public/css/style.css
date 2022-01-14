@@ -60,7 +60,7 @@ nav ul li:active {
 /* Fixed sidenav, full height */
 .sidenav {
     height: 100%;
-    /*width: 160px;*/
+    width: 160px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -247,6 +247,10 @@ button {
         margin-left: 0;    
     }
 
+    header {
+        margin: 10px 20px 10px 20px;
+    }
+
     /* Sidenav full-width */
     .sidenav {
         height: 100%;
@@ -272,9 +276,10 @@ button {
     }
 
     /* Button to display Sidenav full-width */
-    .button_menu {
+    .open_btn {
         display: block;
         cursor: pointer;
+        margin-left: 20px;
     }
 
     /* Create and update form */
