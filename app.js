@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 // Parse application/json
 app.use(express.json());
 
+// let ot use a favicon
 let options = {
     dotfiles: "ignore", //allow, deny, ignore
     etag: true,
