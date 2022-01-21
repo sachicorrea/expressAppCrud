@@ -11,7 +11,6 @@ const connection = mysql.createConnection({
 });
 
 // View functions
-
 exports.view = (req, res) => {
 
     connection.query('SELECT `id`,`function_name` FROM `function_tb`', (err, rows) => {

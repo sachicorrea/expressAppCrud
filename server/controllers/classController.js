@@ -1,4 +1,3 @@
-//const { contentType } = require('express/lib/response');
 const mysql = require('mysql');
 
 // Connection

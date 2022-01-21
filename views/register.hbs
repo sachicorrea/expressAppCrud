@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Inicio</li>
+            <li>Acceso</li>
+            <li>Registro</li>
+        </ul>
+    </nav>
+
+    <h4>JS Chef</h4>
+
+    <form method="POST" action="/auth/register">
+        <h4>Registro</h4>
+
+        <label for="name">Nombre</label>
+        <input type="text" name="name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email">
+
+        <label for="password">Contraseña</label>
+        <input type="password" name="password">
+
+        <div class="btn_form">
+            <button name="btnRegitrate" class="btn btn-primary">Registrarse</button>
+        </div>
+    </form>
+</body>
+
+</html>
