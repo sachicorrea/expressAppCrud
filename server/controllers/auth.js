@@ -26,7 +26,7 @@ exports.login = async (req, res) => {
 
             if (!results || !(await bcrypt.compare(password, results[0].password))) {
                 res.status(401).render('login', {
-                    message: 'El Email o contraseña es incorrecto'
+                    message: 'El email o contraseña son incorrectos'
                 })
             } else {
                 const id = results[0].id;
@@ -84,7 +84,7 @@ exports.register = (req, res) => {
             } else {
                 console.log(results);
                 return res.render('register', {
-                    message: 'User registered'
+                    message: 'Usuario registrado'
                 });
             }
         })

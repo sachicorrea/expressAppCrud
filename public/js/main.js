@@ -1,3 +1,5 @@
+// Script to get selector current option for updating requests
+
 document.addEventListener("DOMContentLoaded", function (event) {
     //código a ejecutar cuando el DOM está listo para recibir acciones
     let classPost = document.getElementById("function_class");
@@ -12,8 +14,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
             classElement.setAttribute("selected", true);
         }
     });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    hljs.initHighlightingOnLoad();
 });

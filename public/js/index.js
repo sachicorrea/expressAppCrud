@@ -1,3 +1,5 @@
+// Script to change sidenav size in media queries
+
 function openNav() {
     document.getElementById("sidenav").style.width = "100%";
 }
