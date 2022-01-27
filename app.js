@@ -4,6 +4,7 @@ const req = require('express/lib/request');
 const hbsHelpers = require('handlebars-helpers');
 const mysql = require('mysql');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Parse application/json bodies (as sent by API clients)
 app.use(express.json());
+app.use(cookieParser());
 
 // let to use a favicon
 let options = {

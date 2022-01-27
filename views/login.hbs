@@ -9,22 +9,13 @@
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
 
-    <title>Registro</title>
+    <title>Acceso</title>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li>Inicio</li>
-            <li>Acceso</li>
-            <li>Registro</li>
-        </ul>
-    </nav>
+    <h4>Acceso JS Chef</h4>
 
-    <h4>JS Chef</h4>
-
-    <form method="POST" action="/auth/register">
-
+    <form method="POST" action="/auth/login">
         <label for="name">Nombre</label>
         <input type="text" name="name">
 
@@ -34,11 +25,8 @@
         <label for="password">Contraseña</label>
         <input type="password" name="password">
 
-        <label for="passwordConfirm">Confirmar contraseña</label>
-        <input type="password" name="passwordConfirm">
-
         <div class="btn_form">
-            <button class="btn btn-primary">Registrarse</button>
+            <button class="btn btn-primary">Acceder</button>
         </div>
     </form>
 
