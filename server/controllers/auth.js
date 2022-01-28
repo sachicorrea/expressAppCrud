@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    connectTimeout: 30000
+    connectTimeout: 100000
 });
 
 exports.login = async (req, res) => {
@@ -89,4 +89,9 @@ exports.register = (req, res) => {
             }
         })
     });
+}
+
+exports.isLoggedIn = async (req, res, next) => {
+    req.message = 'Inside middelware';
+    next();
 }

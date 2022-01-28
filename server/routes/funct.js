@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const functController = require('../controllers/functController');
 const classController = require('../controllers/classController');
-const registerController = require('../controllers/auth');
+const authController = require('../controllers/auth');
 
 // Routes
 router.get('/', functController.view);
@@ -28,8 +28,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/profile', (req, res) => {
-    res.render(profile);
+router.get('/profile', authController.isLoggedIn, (req, res) => {
+    console.log(req.message);
+    res.render('profile');
 });
 
 module.exports = router;

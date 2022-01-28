@@ -256,6 +256,17 @@ button {
     transition: 0.3s;
 }
 
+/* Profile avatar */
+.avatar-ctn {
+    text-decoration: none;
+    text-align: center;
+}
+
+.avatar {
+    width: 65%;
+    text-decoration: none;
+}
+
 /** Media queries **/
 
 @media only screen and (max-width: 768px) {
@@ -290,7 +301,8 @@ button {
         right: 25px;
         font-size: 36px;
         margin-left: 50px;
-        color: #b4b4b4;
+        color: #b
+        4b4b4;
     }
 
     /* Button to display Sidenav full-width */
