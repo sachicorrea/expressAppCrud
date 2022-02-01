@@ -228,7 +228,7 @@ button {
     font-family: "Lato", sans-serif;
 }
 
-/** Flexbox for function name and class in forms **/
+/** Flexbox for function name and class name in forms **/
 .function_data {
     display: flex;
     justify-content: space-between;
@@ -242,7 +242,8 @@ button {
     display: none;
 }
 
-/* Alerts */
+/** Alerts **/
+/* Alerts in forms Register and Login forms */
 .alert {
     padding: 20px;
     background-color: #f44336;
@@ -271,8 +272,8 @@ button {
     text-decoration: none;
 }
 
-/** Form for register and login **/
-.name, .email, .password, .confirmPassword {
+/** Register and login forms **/
+.name, .email, .password, .passwordConfirm {
     width: 100%;
     padding: 12px;
     border: 1px solid;
@@ -282,9 +283,13 @@ button {
     margin-bottom: 16px;
 }
 
+.name:focus, .email:focus, .password:focus, .passwordConfirm:focus { 
+    color: #000;
+}
+
 .form_container {
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 15px;
 }
 
 /** Form registration **/
@@ -293,27 +298,26 @@ button {
 #message-password {
     display: none;
     background: #f1f1f1;
-    color: #000;
     position: relative;
-    padding: 20px;
+    padding: 5px;
+    margin: 0;
 }
 
 #message-password p {
     padding: 10px 35px;
 }
 
-/* Green text color and checkmar when requirement are OK */
+/* Green text color and checkmark when requirement are OK - Register form */
 .valid {
     color: green;
 }
 
 .valid:before {
     position: relative;
-    /*left: -35px;*/
     content: "✔";
 }
 
-/* Add red text color and x symbol when requirements were not accomplished */
+/* Add red text color and x symbol when requirements were not accomplished - Register form*/
 .invalid {
     color: red;
 }
