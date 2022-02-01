@@ -1,4 +1,4 @@
-// Password validation
+// Password validation in register form
 
 let myInput = document.getElementById('psw');
 let letter = document.getElementById('letter');
