@@ -14,13 +14,15 @@
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                 title="Debe contener al menos un número y una letra mayúscula y una minúscula, y al menos 8 caracteres">
 
-            <input type="checkbox" id="tooglePassword">Ver Contraseña
+            <div class="checkPassword">
+                <input type="checkbox" id="tooglePassword">Ver Contraseña
+            </div>
 
             <label for="passwordConfirm">Confirmar contraseña</label>
             <input type="password" name="passwordConfirm" class="passwordConfirm">
 
             <div class="btn_form">
-                <button class="btn btn-primary">Registrarse</button>
+                <button>Registrarse</button>
             </div>
         </form>
     </div>
@@ -33,7 +35,7 @@
     {{/if}}
 
     <div id="message-password">
-        <h3>La contraseña debe contener al menos lo siguiente:</h3>
+        <p>La contraseña debe contener al menos lo siguiente:</p>
         <p id="letter" class="invalid">Una letra <b>minúscula</b></p>
         <p id="capital" class="invalid">Una letra <b>mayúscula</b></p>
         <p id="number" class="invalid">Un <b>número</b></p>

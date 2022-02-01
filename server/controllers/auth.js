@@ -35,7 +35,7 @@ exports.login = async (req, res) => {
                     expiresIn: process.env.JWT_EXPIRES_IN
                 });
 
-                console.log("The token is: " + token);
+                //console.log("The token is: " + token);
 
                 const cookieOptions = {
                     expires: new Date(
@@ -92,6 +92,6 @@ exports.register = (req, res) => {
 }
 
 exports.isLoggedIn = async (req, res, next) => {
-    console.log(req.cookies);
+    //console.log(req.cookies);
     next();
 }

@@ -172,8 +172,12 @@ nav ul li:active {
     background-color: transparent;
 }
 
-/** Create and update forms **/
+/** All forms **/
+form {
+    margin: 0;
+}
 
+/** Create and update forms **/
 .main_inner {
     padding: 0 20px;
 }
@@ -213,7 +217,8 @@ button {
 
     /* Usual styles */
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     border: none;
     background-color: #2c3437;
     color: #fff;
@@ -261,7 +266,14 @@ button {
     transition: 0.3s;
 }
 
-/** Profile avatar **/
+/** Avatar profile **/
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
 .avatar-ctn {
     text-decoration: none;
     text-align: center;
@@ -275,11 +287,16 @@ button {
 /** Register and login forms **/
 .name, .email, .password, .passwordConfirm {
     width: 100%;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid;
     border-radius: 5px;
     box-sizing: border-box;
     margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.checkPassword {
+    width: 100%;
     margin-bottom: 16px;
 }
 
@@ -289,25 +306,25 @@ button {
 
 .form_container {
     background-color: #f1f1f1;
-    padding: 15px;
+    padding: 10px 5px 5px 5px;
 }
 
-/** Form registration **/
-
-/* Message box shown when user clicks on password field - Register form */
+/** Form registration  - password validation **/
+/* Message box shown when user clicks on password field */
 #message-password {
     display: none;
     background: #f1f1f1;
     position: relative;
-    padding: 5px;
+    padding: 0 5px 5px 5px;
     margin: 0;
 }
 
 #message-password p {
-    padding: 10px 35px;
+    padding: 5px 0;
+    font-size: 18px;
 }
 
-/* Green text color and checkmark when requirement are OK - Register form */
+/* Green text color and checkmark when requirement are OK */
 .valid {
     color: green;
 }
@@ -317,7 +334,7 @@ button {
     content: "✔";
 }
 
-/* Add red text color and x symbol when requirements were not accomplished - Register form*/
+/* Add red text color and x symbol when requirements were not accomplished */
 .invalid {
     color: red;
 }
@@ -329,7 +346,6 @@ button {
 }
 
 /** Media queries **/
-
 @media only screen and (max-width: 768px) {
 
     /* Content Home and inner pages */
