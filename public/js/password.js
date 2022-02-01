@@ -55,3 +55,10 @@ myInput.onkeyup = function () {
         lengthPsw.classList.add("invalid");
     }
 }
+
+const tooglePassword = document.querySelector("#tooglePassword");
+
+tooglePassword.addEventListener("click", function (e) {
+    const type = myInput.getAttribute("type") === "password" ? "text" : "password";
+    myInput.setAttribute("type", type);
+});

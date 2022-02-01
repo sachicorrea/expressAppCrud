@@ -1,5 +1,7 @@
 <div class="container">
     <div class="main_inner">
+        <h3>Actualizar una función</h3>
+
         {{#each post}}
         <form method="POST" action="/editfunction/{{this.id}}" novalidate>
             {{> funct-form}}
