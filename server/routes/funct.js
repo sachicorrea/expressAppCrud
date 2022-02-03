@@ -20,6 +20,12 @@ router.get('/editclass/:id', classController.edit);
 router.post('/editclass/:id', classController.update);
 router.get('/viewclass/:id', classController.viewall);
 
+router.get('/', authController.isLoggedIn, (req, res) => {
+    res.render('index', {
+        user: req.user
+    });
+});
+
 router.get('/register', (req, res) => {
     res.render('register');
 });
@@ -29,7 +35,14 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/profile', authController.isLoggedIn, (req, res) => {
-    res.render('profile');
+    console.log(req.user);
+    if (req.user) {
+        res.render('profile', {
+            user: req.user
+        });
+    } else {
+        res.redirect('/login');
+    }
 });
 
 module.exports = router;

@@ -5,6 +5,7 @@ const hbsHelpers = require('handlebars-helpers');
 const mysql = require('mysql');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const routes = require('./server/routes/funct');
 
 require('dotenv').config();
 
@@ -42,7 +43,7 @@ const handlebars = exphbs.create({ extname: '.hbs' });
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
-const routes = require('./server/routes/funct');
+// Routes
 app.use('/', routes);
 app.use('/auth', require('./server/routes/auth'));
 
