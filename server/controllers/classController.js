@@ -7,12 +7,13 @@ const connection = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    connectTimeout: 100000
+    connectTimeout: 100000,
+    port: 3306
 });
 
 exports.view = (req, res) => {
     // Class creation
-    connection.query('SELECT `id`, `class_name` FROM `class_tb`', (err, rows) => {
+    connection.query('SELECT `id`, `clase` FROM `clases_tb`', (err, rows) => {
         if (!err) {
             res.render('class-list', { rows });
         } else {
@@ -31,7 +32,7 @@ exports.form = (req, res) => {
 exports.create = (req, res) => {
     const { class_name } = req.body;
 
-    connection.query('INSERT INTO `class_tb` SET `class_name` = ?', [class_name], (err, rows) => {
+    connection.query('INSERT INTO `clases_tb` SET `clase` = ?', [class_name], (err, rows) => {
         if (!err) {
             res.render('add-class');
         } else {
@@ -43,7 +44,7 @@ exports.create = (req, res) => {
 
 // Edit a class
 exports.edit = (req, res) => {
-    connection.query('SELECT * FROM `class_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
+    connection.query('SELECT * FROM `clases_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
 
         if (!err) {
             res.render('edit-class', { rows });
@@ -57,10 +58,10 @@ exports.edit = (req, res) => {
 exports.update = (req, res) => {
     const { class_name } = req.body;
 
-    connection.query('UPDATE `class_tb` SET `class_name` = ? WHERE `id` = ?', [class_name, req.params.id], (err, rows) => {
+    connection.query('UPDATE `clases_tb` SET `clase` = ? WHERE `id` = ?', [class_name, req.params.id], (err, rows) => {
 
         if (!err) {
-            connection.query('SELECT * FROM `class_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
+            connection.query('SELECT * FROM `clases_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
 
                 if (!err) {
                     res.render('edit-class', { rows });
@@ -77,7 +78,7 @@ exports.update = (req, res) => {
 }
 
 exports.viewall = (req, res) => {
-    connection.query('SELECT * FROM `class_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
+    connection.query('SELECT * FROM `clases_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
         if (!err) {
             res.render('view-class', { rows });
         } else {

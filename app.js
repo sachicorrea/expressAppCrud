@@ -1,13 +1,12 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const req = require('express/lib/request');
 const hbsHelpers = require('handlebars-helpers');
 const mysql = require('mysql');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const routes = require('./server/routes/funct');
 
-require('dotenv').config();
+require('dotenv').config({ path: ".env" });
 
 const app = express();
 const port = process.env.PORT || 5000;

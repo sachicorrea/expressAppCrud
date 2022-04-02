@@ -2,22 +2,23 @@ const mysql = require('mysql');
 
 // Connection
 const connection = mysql.createConnection({
-    multipleStatements: true,
+    //multipleStatements: true,
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    connectTimeout: 100000
+    connectTimeout: 10000,
+    //port: 3306
 });
 
 // View functions
 exports.view = (req, res) => {
-
-    connection.query('SELECT `id`,`function_name` FROM `function_tb`', (err, rows) => {
+    connection.query('SELECT `id`,`nombre` FROM `funciones_tb`', (err, rows) => {
         if (!err) {
             res.render('./partials/sidebar', { functions: rows });
         } else {
             console.log(err);
+            //res.send({ data: "Mensaje de respuesta" })
         }
         //console.log('The data from function_tb table: \n', rows);
     });
@@ -41,7 +42,7 @@ exports.viewfunctions = (req, res) => {
 // Form to create and update a function
 exports.form = (req, res) => {
 
-    connection.query('SELECT * FROM `class_tb` WHERE `id` > 0', [req.params.id], (err, rows) => {
+    connection.query('SELECT * FROM `clases_tb` WHERE `id` > 0', [req.params.id], (err, rows) => {
         if (!err) {
             res.render('add-function', { class: rows });
         } else {
@@ -75,7 +76,7 @@ exports.create = (req, res) => {
 // Edit a fuction
 exports.edit = (req, res) => {
 
-    connection.query('SELECT * FROM `function_tb` WHERE `id` = ?; SELECT * FROM `class_tb`', [req.params.id], (err, rows) => {
+    connection.query('SELECT * FROM `funciones_tb` WHERE `id` = ?; SELECT * FROM `clases_tb`', [req.params.id], (err, rows) => {
 
         if (!err) {
             res.render('edit-function', { post: rows[0], class: rows[1], listExists: true });
@@ -90,10 +91,10 @@ exports.edit = (req, res) => {
 exports.update = (req, res) => {
     const { parent_id, function_name, label, description, source_code, syntax, example } = req.body;
 
-    connection.query('UPDATE `function_tb` SET `parent_id` = ?, `function_name` = ?, `label` = ?, `description` = ?, `source_code` = ?, `syntax` = ?, `example` = ? WHERE `id` = ?', [parent_id, function_name, label, description, source_code, syntax, example, req.params.id], (err, rows) => {
+    connection.query('UPDATE `funciones_tb` SET `parent_id` = ?, `nombre` = ?, `etiquetas` = ?, `descripcion` = ?, `codigo_fuente` = ?, `sintaxis` = ?, `ejemplos` = ? WHERE `id` = ?', [parent_id, function_name, label, description, source_code, syntax, example, req.params.id], (err, rows) => {
 
         if (!err) {
-            connection.query('SELECT * FROM `function_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
+            connection.query('SELECT * FROM `funciones_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
 
                 if (!err) {
                     res.render('edit-function', { rows });
@@ -112,7 +113,7 @@ exports.update = (req, res) => {
 // View functions detailed information
 exports.viewall = (req, res) => {
 
-    connection.query('SELECT * FROM `function_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
+    connection.query('SELECT * FROM `funciones_tb` WHERE `id` = ?', [req.params.id], (err, rows) => {
         if (!err) {
             res.render('details', { rows });
         } else {
